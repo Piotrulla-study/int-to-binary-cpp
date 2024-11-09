@@ -1,12 +1,14 @@
 #include <iostream>
 #include <string>
 
-std::string toBinary(int amount) {
+using namespace std;
+
+string toBinary(int amount) {
     if (amount == 0) return "0";
 
-    std::string context = "";
+    string context = "";
     while (amount > 0) {
-        context = std::to_string(amount % 2) + context;
+        context = to_string(amount % 2) + context;
         amount /= 2;
     }
     return context;
@@ -14,10 +16,10 @@ std::string toBinary(int amount) {
 
 int main() {
     int liczba;
-    std::cout << "Podaj liczbe: ";
-    std::cin >> liczba;
+    cout << "Podaj liczbe: ";
+    cin >> liczba;
 
-    std::cout << "Liczba " << liczba << " w systemie binarnym to: " << toBinary(liczba) << std::endl;
+    cout << "Liczba " << liczba << " w systemie binarnym to: " << toBinary(liczba) << endl;
 
     return 0;
 }
